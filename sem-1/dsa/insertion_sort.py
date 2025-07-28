@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 li = [randint(-49999, 49990) for _ in range(30000)]
 
-def run_insertion_sort(arr, id):
+def run_insertion_sort(arr):
     start_time = time.time()
     # print(f"Started insertion_sort: {id}")
     for i in range(1, len(arr)):
@@ -38,7 +38,7 @@ def randomise_arr(arr, size=None):
 def plotRunTime(arr):
     plot_arr = {}
 
-    for i in tqdm([10, 100, 500, 1000, 2000, 5000, 8000, 10000, 15000, 30000]):
+    for i in tqdm([10, 100, 500, 1000, 2000, 5000, 8000, 10000, 15000, 20000, 25000, 30000]):
         sample_arr = randomise_arr(arr, i)
         timing = run_insertion_sort(sample_arr, randint(-100, 100))
         plot_arr[i] = timing
