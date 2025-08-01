@@ -5,7 +5,7 @@ from helper import li, randomise_arr, plot_graph
 def plotRunTime(arr):
     plot_arr = {}
 
-    for i in tqdm([10, 100, 500, 1000, 2000, 5000, 8000, 10000, 15000, 20000, 25000, 30000]):
+    for i in tqdm([10, 100, 500, 1000, 2000, 5000, 8000]):
         sample_arr = randomise_arr(arr, i)
         timing = selection_sort(sample_arr)
         plot_arr[i] = timing
@@ -24,7 +24,6 @@ def selection_sort(arr):
         temp = arr[i]
         arr[i] = arr[min_pos]
         arr[min_pos] = temp
-
 
     return round((time.time() - start_time) * 1000, 4)
 
